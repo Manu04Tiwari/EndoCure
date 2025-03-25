@@ -1,4 +1,4 @@
-# Endoresearch Final
+### EndoResearch Final
 
 This repository contains the final project for Endoresearch, implemented in Python. The project aims to [briefly describe the project's purpose and goals].
 
@@ -19,3 +19,33 @@ To get started with this project, clone the repository and install the required 
 git clone https://github.com/Manu04Tiwari/endoresearch-final.git
 cd endoresearch-final
 pip install -r requirements.txt
+```
+
+## Description
+A brief description of the project.
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
+
+## Installation
+Instructions on how to set up the project locally.
+
+## Usage
+Examples of how to use the project.
+
+## Contributing
+Guidelines for contributing to the project.
+
+## License
+Information about the project's license.
+
+## Authors
+List of authors and contributors to the project.
+
+## Acknowledgments
+Credits and acknowledgments.
