@@ -1,10 +1,10 @@
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 
-# Load the dataset (replace 'DataSet-fi.xlsx' with your actual file name)
+# Load the dataset
 df = pd.read_excel('DataSet-fi.xlsx')
-# One-hot encode categorical features
 
+# One-hot encode categorical features
 df_encoded = pd.get_dummies(df, drop_first=True)
 
 
@@ -12,7 +12,7 @@ df_encoded = pd.get_dummies(df, drop_first=True)
 print(df_encoded.head())
 
 # Separate features (X) and target variable (y)
-X = df_encoded.drop(columns='Back pain')  # Assuming 'endometriosis' is your target
+X = df_encoded.drop(columns='Back pain')  # Assuming Back-Pain as the target
 y = df_encoded['Back pain']
 
 # Initialize the scaler

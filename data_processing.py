@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.impute import SimpleImputer
 
-# Load the dataset (replace 'DataSet-fi.xlsx' with your actual file name)
+# Load the dataset 
 df = pd.read_excel('DataSet-fi.xlsx')
 
 # Separate numerical and categorical columns
