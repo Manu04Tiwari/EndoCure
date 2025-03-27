@@ -1,6 +1,9 @@
 ## EndoResearch Final
 
-This repository contains the final project for Endoresearch, implemented in Python. The project aims to analyse how reading symptoms can help in early detection and prevention of Endometriosis in Women.
+This repository - EndoCure is a predictive model for Females silently suffering from various issues which eventually leads to Endometriosis. Endometriosis is a condition where the blood clots in the  inner lining of the uterus and thus during the menstruation the blood instead of flowing outside the lining gets slowly accumulating in the linings of the uterus, forming the clot. This clot then leads to various chronic or permanent diseases.
+As of now there's no specified therapy or cure of Endometriosis, thus it becomes very important to detect it early.
+ 
+This project is implemented in Python and Flask. The project aims to analyse how reading symptoms can help in early detection and prevention of Endometriosis in Women.
 
 ## Table of Contents
 
