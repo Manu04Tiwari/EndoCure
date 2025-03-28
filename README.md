@@ -1,4 +1,4 @@
-# EndoResearch Final
+# EndoCure
 
 This repository - EndoCure is a predictive model for Females silently suffering from various issues which eventually leads to Endometriosis. 
 This project is implemented in Python and Flask. The project aims to analyse how reading symptoms can help in early detection and prevention of Endometriosis in Women.
