@@ -55,8 +55,6 @@ print(f"AUC: {auc:.2f}")
 
 # visualize
 
-# ...existing code...
-
 # Plot ROC Curve
 fpr, tpr, thresholds = roc_curve(y_test, y_prob_lr)
 plt.figure(figsize=(8, 6))
