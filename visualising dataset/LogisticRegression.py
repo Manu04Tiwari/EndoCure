@@ -28,9 +28,6 @@ clf.fit(X_train, y_train)
 # Make predictions
 y_pred = clf.predict(X_test)
 
-
-# ...existing code for data loading and preprocessing...
-
 # Train Logistic Regression
 logreg = LogisticRegression(max_iter=1000, random_state=42)
 logreg.fit(X_train, y_train)
