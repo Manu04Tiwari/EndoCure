@@ -9,8 +9,8 @@ import numpy as np
 import os
 
 data = pd.read_excel('DataSet-fi.xlsx')
-X = data.drop('Back Pain', axis=1)
-y = data['Back Pain']
+X = data.drop('Back pain', axis=1)
+y = data['Back pain']
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

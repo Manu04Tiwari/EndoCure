@@ -3,7 +3,8 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
-
+from sklearn.metrics import roc_curve, roc_auc_score
+import matplotlib.pyplot as plt
 # Load the dataset 
 df = pd.read_excel('DataSet-fi.xlsx')
 
@@ -28,3 +29,20 @@ y_pred = model.predict(X_test)
 # Evaluate the model
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
+
+
+# ...existing code for training and predictions...
+
+# Get predicted probabilities for ROC curve
+y_prob_rf = model.predict_proba(X_test)[:, 1]
+
+# Plot ROC Curve
+fpr, tpr, thresholds = roc_curve(y_test, y_prob_rf)
+plt.figure(figsize=(8, 6))
+plt.plot(fpr, tpr, label=f'AUC = {roc_auc_score(y_test, y_prob_rf):.2f}')
+plt.plot([0, 1], [0, 1], 'k--')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve - Random Forest')
+plt.legend(loc='lower right')
+plt.show()
