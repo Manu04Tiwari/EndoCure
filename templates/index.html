@@ -1,56 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>EndoCure Waitlist</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 80px; background: #f4f4f4; }
-        h1 { color: #4CAF50; }
-        input[type=email] {
-            padding: 10px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #45a049;
-        }
-        p { color: #666; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EndoCure - Women's Health and Endometriosis Care</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Join the EndoCure Waitlist</h1>
-    <p>Get notified when we launch 🚀</p>
-    <form id="waitlistForm">
-        <input type="email" id="email" placeholder="Enter your email" required />
-        <button type="submit">Join Waitlist</button>
-    </form>
-    <p id="responseMsg"></p>
 
-    <p><a href="/histogram">View Sample Histogram</a> | <a href="/scatter">Scatter Plot</a> | <a href="/bar">Bar Plot</a></p>
+    <!-- Hero Section -->
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo">EndoCure</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#waitlist" class="btn-appointment">Join Waitlist</a>
+        </nav>
 
-    <script>
-        document.getElementById("waitlistForm").addEventListener("submit", async function(e) {
-            e.preventDefault();
-            const email = document.getElementById("email").value;
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Specialized Care for Endometriosis and Women's Health</h1>
+                <p>Your journey to better reproductive health starts here. Compassionate, research-driven, and patient-centered care for women everywhere.</p>
+                <a href="#waitlist" class="btn-primary">Join Our Waitlist</a>
+            </div>
+            <div class="hero-image">
+                <img src="link" alt="Female Doctor">
+            </div>
+        </div>
+    </header>
 
-            const res = await fetch("/waitlist", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email })
-            });
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat-item">
+            <h2>5,000+</h2>
+            <p>Women Supported</p>
+        </div>
+        <div class="stat-item">
+            <h2>50+</h2>
+            <p>Partner Clinics</p>
+        </div>
+        <div class="stat-item">
+            <h2>30+</h2>
+            <p>Research Studies</p>
+        </div>
+        <div class="stat-item">
+            <h2>24/7</h2>
+            <p>Teleconsultations</p>
+        </div>
+    </section>
 
-            const data = await res.json();
-            document.getElementById("responseMsg").innerText = data.message;
-            document.getElementById("waitlistForm").reset();
-        });
-    </script>
+    <!-- Categories -->
+    <section class="categories">
+        <h2>Our Focus Areas</h2>
+        <div class="category-grid">
+            <div class="category-card">Reproductive Health</div>
+            <div class="category-card">Endometriosis Care</div>
+            <div class="category-card">Fertility Support</div>
+            <div class="category-card">Nutrition Guidance</div>
+            <div class="category-card">Hormonal Health</div>
+            <div class="category-card">Pain Management</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Diagnosis and Testing</h3>
+                <p>Advanced diagnostics to detect and understand endometriosis early.</p>
+            </div>
+            <div class="service-card">
+                <h3>Personalized Treatment</h3>
+                <p>Customized treatment plans tailored to your lifestyle and health needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Telehealth Consultations</h3>
+                <p>Access expert doctors from the comfort of your home.</p>
+            </div>
+            <div class="service-card">
+                <h3>Lifestyle and Nutrition Coaching</h3>
+                <p>Holistic care that addresses diet, exercise, and mental well-being.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section class="waitlist" id="waitlist">
+        <h2>Join Our Waitlist</h2>
+        <p>Be the first to know when EndoCure launches and get exclusive updates.</p>
+        <form action="/waitlist" method="POST" class="waitlist-form">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn-primary">Join Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 EndoCure. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
+

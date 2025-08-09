@@ -1,0 +1,202 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Colors */
+:root {
+    --primary: #e91e63;
+    --secondary: #f8bbd0;
+    --gradient: linear-gradient(135deg, #e91e63, #f06292);
+    --light-bg: #fff0f6;
+    --text-dark: #333;
+}
+
+/* Body */
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: var(--gradient);
+    color: white;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-appointment {
+    background: white;
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    background: var(--light-bg);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.hero-text p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.btn-primary {
+    background: var(--gradient);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-image img {
+    max-width: 400px;
+    border-radius: 20px;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+.stat-item h2 {
+    color: var(--primary);
+    font-size: 2em;
+}
+
+/* Categories */
+.categories {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.category-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Services */
+.services {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--secondary);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Waitlist */
+.waitlist {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+}
+
+.waitlist-form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.waitlist-form input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    outline: none;
+}
+
+.waitlist-form button {
+    padding: 10px 20px;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--gradient);
+    color: white;
+    margin-top: 30px;
+}
