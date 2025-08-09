@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EndoCure API</title>
+    <title>EndoCure Waitlist</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 80px; background: #f4f4f4; }
         h1 { color: #4CAF50; }
-        p { color: #555; }
+        input[type=email] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        p { color: #666; }
     </style>
 </head>
 <body>
-    <h1>Welcome to EndoCure API</h1>
-    <p>This is the backend for Endometriosis Detection.</p>
-    <p>Use POST requests to <code>/predict</code> with patient data to get predictions.</p>
+    <h1>Join the EndoCure Waitlist</h1>
+    <p>Get notified when we launch 🚀</p>
+    <form id="waitlistForm">
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <button type="submit">Join Waitlist</button>
+    </form>
+    <p id="responseMsg"></p>
+
+    <p><a href="/histogram">View Sample Histogram</a> | <a href="/scatter">Scatter Plot</a> | <a href="/bar">Bar Plot</a></p>
+
+    <script>
+        document.getElementById("waitlistForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+
+            const res = await fetch("/waitlist", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email })
+            });
+
+            const data = await res.json();
+            document.getElementById("responseMsg").innerText = data.message;
+            document.getElementById("waitlistForm").reset();
+        });
+    </script>
 </body>
 </html>

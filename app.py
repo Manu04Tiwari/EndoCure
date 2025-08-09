@@ -1,12 +1,23 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import io
 import base64
+import csv
+import os
 
 app = Flask(__name__)
 
+WAITLIST_FILE = "waitlist.csv"
+
+# Ensure waitlist file exists
+if not os.path.exists(WAITLIST_FILE):
+    with open(WAITLIST_FILE, mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["email"])  # header
+
+# ======== DATA LOADING & PLOTTING ========
 def load_data():
     data = pd.read_excel('DataSet-fi.xlsx')
     return data
@@ -18,9 +29,26 @@ def plot_to_img(fig):
     img = base64.b64encode(buf.getvalue()).decode('ascii')
     return img
 
+# ======== ROUTES ========
+
 @app.route('/')
 def index():
+    # Landing page with waitlist form
     return render_template('index.html')
+
+@app.route('/waitlist', methods=['POST'])
+def waitlist():
+    data = request.get_json()
+    email = data.get("email", "").strip()
+
+    if not email:
+        return jsonify({"message": "❌ Email is required"}), 400
+
+    with open(WAITLIST_FILE, mode="a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([email])
+
+    return jsonify({"message": "✅ You’ve been added to the waitlist!"})
 
 @app.route('/histogram')
 def show_histogram():
@@ -60,4 +88,4 @@ def show_bar_plot():
     return render_template('plot.html', plot_img=img, plot_title=f'Bar Plot of {column}')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
