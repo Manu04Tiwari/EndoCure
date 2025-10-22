@@ -1,110 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EndoCure - Women's Health and Endometriosis Care</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EndoCure | Early Detection for Endometriosis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Simple fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Background floating gradient */
+    .gradient-bg {
+      background: radial-gradient(circle at 20% 30%, #ffd6e0, transparent 50%),
+                  radial-gradient(circle at 80% 70%, #ffe1ec, transparent 50%);
+    }
+  </style>
 </head>
-<body>
+<body class="gradient-bg min-h-screen text-gray-800 transition-colors duration-500" id="body">
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <nav class="navbar">
-            <div class="logo">EndoCure</div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <a href="#waitlist" class="btn-appointment">Join Waitlist</a>
-        </nav>
+  <!-- 🌸 Hero Section -->
+  <section class="text-center py-24 px-6 fade-in">
+    <h1 class="text-6xl font-extrabold text-pink-700 mb-4 drop-shadow-sm">EndoCure</h1>
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+      Empowering early detection of Endometriosis through <span class="font-semibold text-pink-600">AI-driven healthcare intelligence</span>.
+    </p>
+    <div class="mt-10 flex justify-center gap-4">
+      <a href="#waitlist" class="bg-pink-600 text-white px-8 py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+        Join the Waitlist
+      </a>
+      <a href="#insights" class="border-2 border-pink-500 text-pink-600 px-8 py-3 rounded-full hover:bg-pink-50 transition">
+        Explore Insights
+      </a>
+    </div>
+  </section>
 
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Specialized Care for Endometriosis and Women's Health</h1>
-                <p>Your journey to better reproductive health starts here. Compassionate, research-driven, and patient-centered care for women everywhere.</p>
-                <a href="#waitlist" class="btn-primary">Join Our Waitlist</a>
-            </div>
-            <div class="hero-image">
-                <img src="link" alt="Female Doctor">
-            </div>
-        </div>
-    </header>
+  <!-- 🧠 About Section -->
+  <section class="max-w-4xl mx-auto text-center py-20 px-6 fade-in">
+    <h2 class="text-3xl font-bold text-pink-700 mb-4">How It Works</h2>
+    <p class="text-gray-700 leading-relaxed text-lg">
+      EndoCure uses clinical symptom data to predict possible endometriosis risk. 
+      Our intelligent model analyzes patterns, pain indices, and hormonal indicators 
+      to provide <span class="font-semibold text-pink-600">actionable insights</span> for both patients and healthcare providers.
+    </p>
+  </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stat-item">
-            <h2>5,000+</h2>
-            <p>Women Supported</p>
-        </div>
-        <div class="stat-item">
-            <h2>50+</h2>
-            <p>Partner Clinics</p>
-        </div>
-        <div class="stat-item">
-            <h2>30+</h2>
-            <p>Research Studies</p>
-        </div>
-        <div class="stat-item">
-            <h2>24/7</h2>
-            <p>Teleconsultations</p>
-        </div>
-    </section>
+  <!-- 💌 Waitlist Form -->
+  <section id="waitlist" class="bg-pink-50 py-20 fade-in">
+    <div class="max-w-md mx-auto text-center">
+      <h3 class="text-3xl font-bold text-pink-700 mb-6">Join Our Waitlist</h3>
+      <p class="text-gray-600 mb-6">Be the first to experience EndoCure when we launch.</p>
+      <form id="waitlistForm" class="space-y-4">
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+          class="w-full p-3 border border-pink-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
+        />
+        <button
+          type="submit"
+          class="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold hover:bg-pink-700 transition duration-300"
+        >
+          Notify Me
+        </button>
+      </form>
+      <p id="response" class="mt-4 text-gray-800 font-medium"></p>
+    </div>
+  </section>
 
-    <!-- Categories -->
-    <section class="categories">
-        <h2>Our Focus Areas</h2>
-        <div class="category-grid">
-            <div class="category-card">Reproductive Health</div>
-            <div class="category-card">Endometriosis Care</div>
-            <div class="category-card">Fertility Support</div>
-            <div class="category-card">Nutrition Guidance</div>
-            <div class="category-card">Hormonal Health</div>
-            <div class="category-card">Pain Management</div>
-        </div>
-    </section>
+  <!-- 📊 Insights Section -->
+  <section id="insights" class="max-w-5xl mx-auto py-20 text-center px-6 fade-in">
+    <h3 class="text-3xl font-bold text-pink-700 mb-8">Explore Our Data Insights</h3>
+    <p class="text-gray-600 mb-10">Dive into visual patterns from our medical dataset.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <a href="/histogram" class="bg-white border border-pink-200 p-8 rounded-2xl shadow hover:shadow-lg hover:scale-105 transition-transform duration-300">
+        <h4 class="text-xl font-semibold text-pink-700 mb-2">📈 Histogram</h4>
+        <p class="text-gray-600 text-sm">Visualize symptom distribution patterns.</p>
+      </a>
+      <a href="/scatter" class="bg-white border border-pink-200 p-8 rounded-2xl shadow hover:shadow-lg hover:scale-105 transition-transform duration-300">
+        <h4 class="text-xl font-semibold text-pink-700 mb-2">🔬 Scatter Plot</h4>
+        <p class="text-gray-600 text-sm">Discover relationships between variables.</p>
+      </a>
+      <a href="/bar" class="bg-white border border-pink-200 p-8 rounded-2xl shadow hover:shadow-lg hover:scale-105 transition-transform duration-300">
+        <h4 class="text-xl font-semibold text-pink-700 mb-2">📊 Bar Chart</h4>
+        <p class="text-gray-600 text-sm">Compare categorical symptom frequencies.</p>
+      </a>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Diagnosis and Testing</h3>
-                <p>Advanced diagnostics to detect and understand endometriosis early.</p>
-            </div>
-            <div class="service-card">
-                <h3>Personalized Treatment</h3>
-                <p>Customized treatment plans tailored to your lifestyle and health needs.</p>
-            </div>
-            <div class="service-card">
-                <h3>Telehealth Consultations</h3>
-                <p>Access expert doctors from the comfort of your home.</p>
-            </div>
-            <div class="service-card">
-                <h3>Lifestyle and Nutrition Coaching</h3>
-                <p>Holistic care that addresses diet, exercise, and mental well-being.</p>
-            </div>
-        </div>
-    </section>
+  <!-- 🌙 Dark Mode Toggle -->
+  <div class="fixed bottom-6 right-6">
+    <button id="darkToggle" class="bg-pink-600 text-white p-3 rounded-full shadow hover:bg-pink-700 transition">
+      🌙
+    </button>
+  </div>
 
-    <!-- Waitlist Section -->
-    <section class="waitlist" id="waitlist">
-        <h2>Join Our Waitlist</h2>
-        <p>Be the first to know when EndoCure launches and get exclusive updates.</p>
-        <form action="/waitlist" method="POST" class="waitlist-form">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit" class="btn-primary">Join Now</button>
-        </form>
-    </section>
+  <!-- 🌿 Footer -->
+  <footer class="bg-pink-700 text-white text-center py-8 fade-in">
+    <p class="text-sm">© 2025 EndoCure | Built with ❤️ by <span class="font-semibold">Manu Tiwari</span></p>
+  </footer>
 
-    <footer>
-        <p>© 2025 EndoCure. All rights reserved.</p>
-    </footer>
+  <script>
+    // Waitlist AJAX
+    document.getElementById("waitlistForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const responseEl = document.getElementById("response");
+      responseEl.textContent = "Submitting...";
+      responseEl.classList.add("animate-pulse");
 
+      try {
+        const res = await fetch("/waitlist", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+        responseEl.textContent = data.message;
+        responseEl.classList.remove("animate-pulse");
+      } catch (err) {
+        responseEl.textContent = "⚠️ Something went wrong. Please try again.";
+      }
+    });
+
+    // Dark Mode Toggle
+    const body = document.getElementById("body");
+    const toggle = document.getElementById("darkToggle");
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("bg-gray-900");
+      body.classList.toggle("text-white");
+      toggle.textContent = body.classList.contains("bg-gray-900") ? "☀️" : "🌙";
+    });
+  </script>
 </body>
 </html>
-
