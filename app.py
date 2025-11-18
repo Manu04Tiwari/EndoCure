@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('Agg')  # Use non-GUI backend
+matplotlib.use('Agg')
 
 from flask import Flask, render_template, request, jsonify
 import matplotlib.pyplot as plt
