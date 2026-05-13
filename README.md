@@ -134,6 +134,6 @@ pip3 install -r requirements.txt
 ```
 
 ## License 
-The code in this project is licensed under the MIT license 2025 - Manu Tiwari
+The code in this project is licensed under the MIT license 2026 - Manu Tiwari
 
 
